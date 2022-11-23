@@ -1,8 +1,10 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Pagination } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import styles from "../../css/qna.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Qna = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   const LAST_PAGE = data.length % 10 === 0 ? parseInt(data.length / 10) : parseInt(data.length / 10) + 1; // 마지막 페이지
   const [page, setPage] = useState(1); // 처음 페이지는 1이다.
@@ -30,8 +32,9 @@ const Qna = () => {
   }, [page]);
   return (
     <div className={styles.body}>
+      <button onClick={() => navigate("/qna/create")}>글 작성</button>
       <TableContainer className={styles.table}>
-        <Table sx={{ height: "70%" }}>
+        <Table sx={{ height: "70%", width: "70%" }}>
           <TableHead>
             <TableCell align="center" sx={{ width: "5%", backgroundColor: "gray", color: "white" }}>
               번호
@@ -51,7 +54,9 @@ const Qna = () => {
               return (
                 <TableRow>
                   <TableCell align="center">{value}</TableCell>
-                  <TableCell align="center">{value}번째 제목</TableCell>
+                  <TableCell align="center" style={{ cursor: "pointer" }} onClick={() => navigate("/qna/" + value)}>
+                    {value}번째 제목
+                  </TableCell>
                   <TableCell align="center">2022-11-14</TableCell>
                   <TableCell align="center">{value}</TableCell>
                 </TableRow>

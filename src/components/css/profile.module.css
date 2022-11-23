@@ -12,14 +12,18 @@
   height: 88vh;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid lightgray;
-  flex-direction: column;
 }
 
-.table {
+.box {
   display: flex;
-  height: 75vh;
+  width: 50%;
+  height: 80%;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.title {
+  display: flex;
 }
