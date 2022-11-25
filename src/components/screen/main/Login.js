@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styles from "../../css/login.module.css";
 import { TextFieldStyle } from "../../styles/TextFieldStyle";
 import leftimg from "../../../public/login_background.png";
 import person from "../../../public/person.png";
@@ -11,32 +10,32 @@ const Login = () => {
   const [password, setPassword] = useState();
 
   return (
-    <div className={styles.body}>
-      <div className={styles.box}>
-        <img src={leftimg} style={{ height: "60vh" }} />
-        <div className={styles.inner_box}>
-          <label className={styles.label}>
-            <img src={person} style={{ width: "80px", marginRight: "10px" }} />
+    <div className="flex w-full h-[88vh] justify-center items-center border-b-[1px] border-gray-200 bg-login">
+      <div className="flex w-1/2 h-4/5 justify-center items-center rounded-lg shadow-shadow bg-white">
+        <img src={leftimg} className="w-3/7 h-4/5" />
+        <div className="flex w-[22vw] h-4/5 justify-center items-center bg-gray-100 flex-col rounded-r-2xl">
+          <label className="flex text-[25px] font-semibold justify-center items-center text-gray-600 mb-7">
+            <img src={person} className="w-20 mr-2.5" />
             Login to your account
           </label>
-          <div className={styles.input_box}>
-            <TextFieldStyle label="email" sx={{ bgcolor: "white", width: 350, mb: 1, borderRadius: "15px" }} onChange={(e) => setEmail(e.target.value)} />
+          <div className="flex w-full justify-center items-center flex-col">
+            <TextFieldStyle label="email" sx={{ bgcolor: "white", width: "80%", mb: 1, borderRadius: "15px" }} onChange={(e) => setEmail(e.target.value)} />
             <TextFieldStyle
               type="password"
               label="password"
-              sx={{ bgcolor: "white", width: 350, mt: 1, borderRadius: "15px" }}
+              sx={{ bgcolor: "white", width: "80%", mt: 1, borderRadius: "15px" }}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className={styles.button_box}>
-            <button className={styles.login_button}>Sign in</button>
+          <div className="flex w-4/5 h-1/5 justify-end items-center">
+            <button className="flex w-3/5 h-1/2 justify-center items-center bg-button rounded-3xl text-white font-[600]">Sign in</button>
           </div>
-          <div className={styles.text}>
-            <label style={{ color: "rgb(180, 180, 180)" }}>Dont'have an account? &nbsp;</label>
-            <label style={{ color: "rgb(0, 145, 158)", cursor: "pointer" }} onClick={() => navigate("/register")}>
+          <div className="flex w-full h-1/5 justify-end flex-wrap p-10">
+            <label className="text-gray-400">Dont'have an account? &nbsp;</label>
+            <label className="text-button cursor-pointer" onClick={() => navigate("/register")}>
               Create account
             </label>
-            <label style={{ color: "rgb(150, 150, 150)", cursor: "pointer" }}>Forgot your password?</label>
+            <label className="text-gray-400 cursor-pointer">Forgot your password?</label>
           </div>
         </div>
       </div>

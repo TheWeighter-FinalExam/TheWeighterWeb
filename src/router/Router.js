@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Barcode from "../components/screen/main/Barcode";
-import Exam from "../components/screen/main/Exam";
 import Info from "../components/screen/main/Info";
 import Login from "../components/screen/main/Login";
 import Main from "../components/screen/main/Main";
@@ -15,7 +14,6 @@ const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Main />} />
-      <Route path="/exam" element={<Exam />} />
       <Route path="/login" element={<Login />} />
       <Route path="/qna">
         <Route path="main" element={<Qna />} />

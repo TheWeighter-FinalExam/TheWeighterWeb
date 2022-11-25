@@ -1,6 +1,5 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Pagination } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import styles from "../../css/qna.module.css";
 import { useNavigate } from "react-router-dom";
 
 const Qna = () => {
@@ -31,9 +30,9 @@ const Qna = () => {
     }
   }, [page]);
   return (
-    <div className={styles.body}>
+    <div className="flex w-full h-[88vh] justify-center items-center border-b-1 border-gray-500 flex-col">
       <button onClick={() => navigate("/qna/create")}>글 작성</button>
-      <TableContainer className={styles.table}>
+      <TableContainer className="flex w-4/5 h-4/5 justify-center items-center flex-col">
         <Table sx={{ height: "70%", width: "70%" }}>
           <TableHead>
             <TableCell align="center" sx={{ width: "5%", backgroundColor: "gray", color: "white" }}>

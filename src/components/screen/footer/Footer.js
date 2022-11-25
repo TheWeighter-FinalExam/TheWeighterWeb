@@ -1,14 +1,13 @@
 import React from "react";
-import styles from "../../css/footer.module.css";
 
 const Footer = () => {
   return (
-    <div className={styles.footer}>
-      <div className={styles.copyright}>©Copyright - Weighter™</div>
-      <div className={styles.buttons}>
-        <button className={styles.button}></button>
-        <button className={styles.button}></button>
-        <button className={styles.button}></button>
+    <div className="flex w-full h-[5vh] justify-between items-center bg-button text-white">
+      <div className="flex w-[90%] items-center justify-center">©Copyright - Weighter™</div>
+      <div className="flex w-[10%] h-full flex-row items-center justify-center">
+        <button className="flex w-8 h-8 justify-center items-center bg-menuitem m-2"></button>
+        <button className="flex w-8 h-8 justify-center items-center bg-menuitem m-2"></button>
+        <button className="flex w-8 h-8 justify-center items-center bg-menuitem m-2"></button>
       </div>
     </div>
   );

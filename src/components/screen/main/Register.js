@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styles from "../../css/register.module.css";
 import leftimg from "../../../public/login_background.png";
 import rock from "../../../public/rock.png";
 import { TextFieldStyle } from "../../styles/TextFieldStyle";
@@ -42,15 +41,15 @@ const Register = () => {
   };
 
   return (
-    <div className={styles.body}>
-      <div className={styles.box}>
-        <img src={leftimg} style={{ height: "60vh" }} />
-        <div className={styles.inner_box}>
-          <div className={styles.label}>
-            <img src={rock} style={{ width: "70px", marginRight: "10px" }} />
+    <div className="flex w-full h-[88vh] justify-center items-center border-b-1 border-gray-500 bg-login">
+      <div className="flex w-1/2 h-4/5 justify-center items-center rounded-lg shadow-shadow bg-white">
+        <img src={leftimg} className="flex w-3/7 h-5/6" />
+        <div className="flex w-[22vw] h-5/6 justify-center items-center bg-gray-100 flex-col rounded-r-2xl">
+          <div className="flex text-[25px] font-semibold justify-center items-center text-gray-600 mb-7">
+            <img src={rock} className="flex w-16 mr-2.5" />
             Create Account
           </div>
-          <div className={styles.input_box}>
+          <div className="flex justify-center items-center flex-wrap mb-5">
             <TextFieldStyle
               id="first-name"
               sx={{ width: 170, bgcolor: "white", mr: "5px", borderRadius: "15px" }}
@@ -82,7 +81,7 @@ const Register = () => {
                 ),
               }}
             />
-            <div className={styles.text} style={{ color: "rgb(150, 150, 150)", fontSize: "12px" }}>
+            <div className="flex w-5/6 justify-end flex-wrap mb-1 text-gray-400 text-[12px]">
               <label>8 - 14 charaters Required(0-9, a-z, A-Z)</label>
               <label>Special characters Required(!, @, #, $, %)</label>
             </div>
@@ -92,17 +91,17 @@ const Register = () => {
               label="Conrifm Password"
               onChange={(e) => onChangeConfirmPassword(e)}
             ></TextFieldStyle>
-            <div className={styles.text}>
-              {pwCheck ? <label style={{ color: "green" }}>OK</label> : <label style={{ color: "red" }}>Please Check Password & Confirm Password</label>}
+            <div className="flex w-5/6 justify-end flex-wrap mb-1">
+              {pwCheck ? <label className="text-blue-600">OK</label> : <label className="text-red-600">Please Check Password & Confirm Password</label>}
             </div>
-            <div className={styles.text} style={{ marginTop: "10px" }}>
-              I Agree to&nbsp;<label style={{ color: "#1F9EA8", cursor: "pointer" }}>Terms Of Service</label>&nbsp;and&nbsp;
-              <label style={{ color: "#1F9EA8", cursor: "pointer" }}>Privacy Policy.</label>
+            <div className="flex w-5/6 justify-end flex-wrap mb-1 mt-2.5">
+              I Agree to&nbsp;<label className="text-button cursor-pointer">Terms Of Service</label>&nbsp;and&nbsp;
+              <label className="text-button cursor-pointer">Privacy Policy.</label>
               <input type="checkbox" />
             </div>
           </div>
-          <div className={styles.button_box}>
-            <button className={styles.signup_button}>Sign up</button>
+          <div className="flex w-5/6 h-1/7 justify-end items-center">
+            <button className="flex w-1/2 h-12 justify-center items-center bg-button rounded-2xl text-white">Sign up</button>
           </div>
         </div>
       </div>

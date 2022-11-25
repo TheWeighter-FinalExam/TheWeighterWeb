@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import styles from "../../css/barcode.module.css";
 import { CameraAltOutlined } from "@mui/icons-material";
 import { barcodeRequest, infoRequest } from "../../request";
 import Quagga from "quagga";
@@ -87,32 +86,34 @@ const Barcode = () => {
   };
 
   return (
-    <div className={styles.body}>
-      <div className={styles.box}>
-        <div className={styles.box_left}>
+    <div className="flex w-full h-[88vh] justify-center items-center border-b-1 flex-col bg-gray-200">
+      <div className="flex w-4/5 h-[80%] bg-white rounded-2xl items-center justify-center shadow-shadow">
+        <div className="flex w-[30%] h-full flex-col items-center justify-center">
           {src ? (
-            <img src={src} style={{ width: "100%", borderRadius: "20px" }} />
+            <img src={src} className="w-full rounded-2xl" />
           ) : (
-            <label className={styles.input_box}>
-              <CameraAltOutlined style={{ fontSize: "200px", color: "rgb(150, 150, 150)" }} />
+            <label className="flex w-[23vw] h-[23vw] bg-gray-200 rounded-2xl shadow-shadow items-center justify-center flex-col">
+              <CameraAltOutlined sx={{ fontSize: "200px", color: "rgb(150, 150, 150)" }} />
               클릭하여 이미지를 첨부합니다.
-              <input type="file" style={{ display: "none" }} accept="image/*" onChange={(e) => decode(e)}></input>
+              <input type="file" className="hidden" accept="image/*" onChange={(e) => decode(e)}></input>
             </label>
           )}
           <label>{barcode}</label>
-          <button className={styles.button} onClick={onClickBarcodeButton}>
+          <button
+            className="flex w-36 h-12 items-center justify-center bg-button rounded-lg shadow-shadow mt-7 text-white text-[15px]"
+            onClick={onClickBarcodeButton}
+          >
             바코드 분석
           </button>
         </div>
-        <div className={styles.box_right}>
-          <div className={styles.analysis_box}>
-            <div className={styles.header}>분석 결과</div>
+        <div className="flex w-3/5 h-full flex-col items-center justify-center">
+          <div className="flex w-[90%] h-4/5 bg-gray-200 rounded-lg p-5 flex-col overflow-auto">
+            <div className="flex w-[20%] h-[10%] p-5 bg-gray-400 items-center justify-center text-[25px] rounded-lg text-[550] mb-5">분석 결과</div>
             {showData &&
               Object.keys(showData).map((value) => (
-                <div className={styles.content}>
-                  <div className={styles.name}>{value}</div>
-                  <div className={styles.amount}>{showData[value] === "N/A" ? 0.0 : showData[value]}</div>
-                  <div className={styles.recommend}>{value}</div>
+                <div className="flex w-full h-2/5 justify-center items-center flex-row mb-5">
+                  <div className="flex w-1/4 h-10 justify-center items-center bg-gray-400">{value}</div>
+                  <div className="flex w-2/4 h-10 justify-center items-center bg-white">{showData[value] === "N/A" ? 0.0 : showData[value]}</div>
                 </div>
               ))}
           </div>
