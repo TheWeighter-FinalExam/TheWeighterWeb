@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Barcode from "../components/screen/main/Barcode";
 import Exam from "../components/screen/main/Exam";

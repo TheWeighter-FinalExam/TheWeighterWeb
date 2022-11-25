@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import styles from "../../css/barcode.module.css";
 import { CameraAltOutlined } from "@mui/icons-material";
 import { barcodeRequest, infoRequest } from "../../request";
-import Scanner from "../../scanner/Scanner";
 import Quagga from "quagga";
 
 const Barcode = () => {
@@ -65,7 +64,7 @@ const Barcode = () => {
     onChangeData(data, setShowData);
   }, [data]);
 
-  const onChangeData = (data, setData) => {
+  const onChangeData = (data, setShowData) => {
     if (data["DESC_KOR"] === "고량미,알곡") {
       setData([]);
     } else {
@@ -83,7 +82,7 @@ const Barcode = () => {
       newObj["콜레스테롤 (g)"] = data["NUTR_CONT7"];
       newObj["포화지방산 (g)"] = data["NUTR_CONT8"];
       newObj["트랜스지방산 (g)"] = data["NUTR_CONT9"];
-      setData(newObj);
+      setShowData(newObj);
     }
   };
 

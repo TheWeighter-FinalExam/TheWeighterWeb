@@ -4,13 +4,12 @@ import { Search } from "@mui/icons-material";
 import title from "../../../public/title.png";
 import { useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ isLogined }) => {
   const navigate = useNavigate();
-  const [isLogined, setIsLogined] = useState(true);
 
   return (
     <>
-      <div className={styles.header}>
+      <div className="container h-screen">
         <div className={styles.title} onClick={() => navigate("/")}>
           <img src={title} className={styles.title_img}></img>
         </div>
@@ -26,7 +25,6 @@ const Header = () => {
           <button className={styles.menuItem} onClick={() => navigate("/qna/main")}>
             고객 지원
           </button>
-          <Search style={{ cursor: "pointer", marginRight: "10px", width: "40px", height: "40px" }} />
           {isLogined ? (
             <button className={styles.button} onClick={() => navigate("/profile")} style={{ width: "300px" }}>
               프로필
