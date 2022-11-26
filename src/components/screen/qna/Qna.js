@@ -1,6 +1,7 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Pagination } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import moment from "moment";
 
 const Qna = () => {
   const navigate = useNavigate();
@@ -30,41 +31,49 @@ const Qna = () => {
     }
   }, [page]);
   return (
-    <div className="flex w-full h-[88vh] justify-center items-center border-b-1 border-gray-500 flex-col">
-      <button onClick={() => navigate("/qna/create")}>글 작성</button>
-      <TableContainer className="flex w-4/5 h-4/5 justify-center items-center flex-col">
-        <Table sx={{ height: "70%", width: "70%" }}>
-          <TableHead>
-            <TableCell align="center" sx={{ width: "5%", backgroundColor: "gray", color: "white" }}>
-              번호
-            </TableCell>
-            <TableCell align="center" sx={{ width: "60%", backgroundColor: "gray", color: "white" }}>
-              제목
-            </TableCell>
-            <TableCell align="center" sx={{ width: "25%", backgroundColor: "gray", color: "white" }}>
-              등록일시
-            </TableCell>
-            <TableCell align="center" sx={{ width: "10%", backgroundColor: "gray", color: "white" }}>
-              조회수
-            </TableCell>
-          </TableHead>
-          <TableBody>
-            {showData.map((value) => {
-              return (
-                <TableRow>
-                  <TableCell align="center">{value}</TableCell>
-                  <TableCell align="center" style={{ cursor: "pointer" }} onClick={() => navigate("/qna/" + value)}>
-                    {value}번째 제목
-                  </TableCell>
-                  <TableCell align="center">2022-11-14</TableCell>
-                  <TableCell align="center">{value}</TableCell>
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-        <Pagination count={LAST_PAGE} defaultPage={1} boundaryCount={2} onChange={(e) => handlePage(e)} />
-      </TableContainer>
+    <div className="flex w-full h-[88vh] justify-between items-center border-b-1 border-gray-500 flex-col">
+      <div className="flex w-full h-1/5 mb-[3%] justify-center items-center bg-gray-200 text-4xl font-[700]">자유게시판</div>
+      <table className="flex w-[90%] h-5/7 justify-center items-center flex-col mb-10">
+        <thead className="flex w-full h-14 justify-center items-center border-y-2 border-black bg-gray-300">
+          <th className="flex w-[5%] justify-center">No</th>
+          <th className="flex w-[10%] justify-center">카테고리</th>
+          <th className="flex w-[55%] justify-center">제목</th>
+          <th className="flex w-[10%] justify-center">글쓴이</th>
+          <th className="flex w-[10%] justify-center">작성시간</th>
+          <th className="flex w-[5%] justify-center">조회수</th>
+          <th className="flex w-[5%] justify-center">좋아요</th>
+        </thead>
+        <tbody className="flex w-full justify-center items-center flex-col">
+          {showData.map((value) => (
+            <tr className="flex h-12 w-full justify-center items-center border-b-[1px] border-gray-500">
+              <td className="flex w-[5%] justify-center">{value}</td>
+              <td className="flex w-[10%] justify-center">null</td>
+              <td className="flex w-[55%] justify-center">제목 {value}</td>
+              <td className="flex w-[10%] justify-center">글쓴이 {value}</td>
+              <td className="flex w-[10%] justify-center">{moment(Date.now()).format("YYYY.MM.DD")}</td>
+              <td className="flex w-[5%] justify-center">{value}</td>
+              <td className="flex w-[5%] justify-center">{value}</td>
+            </tr>
+          ))}
+        </tbody>
+        <tr className="flex w-full h-14 justify-between items-center bg-gray-300 border-t-[1px] border-b-2 border-black">
+          <Pagination
+            count={LAST_PAGE}
+            defaultPage={1}
+            boundaryCount={2}
+            color="primary"
+            size="large"
+            onChange={(e) => handlePage(e)}
+            sx={{ display: "flex", width: "90%", justifyContent: "center" }}
+          />
+          <button
+            onClick={() => navigate("/qna/create")}
+            className="flex w-[8%] h-10 text-white bg-button justify-center items-center mr-[2%] rounded-full hover:bg-hover hover:transition"
+          >
+            글 쓰기
+          </button>
+        </tr>
+      </table>
     </div>
   );
 };

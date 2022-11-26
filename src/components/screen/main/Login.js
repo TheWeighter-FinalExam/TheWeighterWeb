@@ -28,7 +28,9 @@ const Login = () => {
             />
           </div>
           <div className="flex w-4/5 h-1/5 justify-end items-center">
-            <button className="flex w-3/5 h-1/2 justify-center items-center bg-button rounded-3xl text-white font-[600]">Sign in</button>
+            <button className="flex w-3/5 h-1/2 justify-center items-center bg-button rounded-3xl text-white font-[600] hover:bg-hover hover:transition">
+              Sign in
+            </button>
           </div>
           <div className="flex w-full h-1/5 justify-end flex-wrap p-10">
             <label className="text-gray-400">Dont'have an account? &nbsp;</label>

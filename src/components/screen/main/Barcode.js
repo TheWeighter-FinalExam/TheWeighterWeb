@@ -92,7 +92,7 @@ const Barcode = () => {
           {src ? (
             <img src={src} className="w-full rounded-2xl" />
           ) : (
-            <label className="flex w-[23vw] h-[23vw] bg-gray-200 rounded-2xl shadow-shadow items-center justify-center flex-col">
+            <label className="flex w-[23vw] h-[23vw] bg-gray-200 rounded-2xl shadow-shadow items-center justify-center flex-col cursor-pointer">
               <CameraAltOutlined sx={{ fontSize: "200px", color: "rgb(150, 150, 150)" }} />
               클릭하여 이미지를 첨부합니다.
               <input type="file" className="hidden" accept="image/*" onChange={(e) => decode(e)}></input>
@@ -100,7 +100,7 @@ const Barcode = () => {
           )}
           <label>{barcode}</label>
           <button
-            className="flex w-36 h-12 items-center justify-center bg-button rounded-lg shadow-shadow mt-7 text-white text-[15px]"
+            className="flex w-36 h-12 items-center justify-center bg-button rounded-lg shadow-shadow mt-7 text-white text-[15px] hover:bg-hover hover:transition"
             onClick={onClickBarcodeButton}
           >
             바코드 분석

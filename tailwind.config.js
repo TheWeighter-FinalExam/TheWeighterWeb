@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         menuitem: "#23E0E2",
         button: "#01919e",
+        hover: "#8EC1C6",
       },
       backgroundImage: {
         banner: "url(./public/banner.png)",

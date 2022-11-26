@@ -101,7 +101,7 @@ const Register = () => {
             </div>
           </div>
           <div className="flex w-5/6 h-1/7 justify-end items-center">
-            <button className="flex w-1/2 h-12 justify-center items-center bg-button rounded-2xl text-white">Sign up</button>
+            <button className="flex w-1/2 h-12 justify-center items-center bg-button rounded-2xl text-white hover:bg-hover hover:transition">Sign up</button>
           </div>
         </div>
       </div>

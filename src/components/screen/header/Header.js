@@ -6,7 +6,7 @@ const Header = ({ isLogined }) => {
 
   return (
     <>
-      <div className="flex h-[7vh] justify-between items-center border-b-1">
+      <div className="flex w-full h-[7vh] justify-between items-center border-b-2 border-gray-300">
         <div className="flex h-[6vh] justify-center items-center ml-7 cursor-pointer" onClick={() => navigate("/")}>
           <img src={title} className="flex h-[6vh]"></img>
         </div>
