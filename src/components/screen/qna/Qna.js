@@ -31,9 +31,9 @@ const Qna = () => {
     }
   }, [page]);
   return (
-    <div className="flex w-full h-[88vh] justify-between items-center border-b-1 border-gray-500 flex-col">
-      <div className="flex w-full h-1/5 mb-[3%] justify-center items-center bg-gray-200 text-4xl font-[700]">자유게시판</div>
-      <table className="flex w-[90%] h-5/7 justify-center items-center flex-col mb-10">
+    <div className="flex w-full h-[88vh] items-center border-b-1 border-gray-500 flex-col">
+      <div className="flex w-full h-[10%] mb-[3%] justify-center items-center bg-gray-200 text-4xl font-[700]">게시판</div>
+      <table className="flex w-[90%] h-[80%] justify-center items-center flex-col">
         <thead className="flex w-full h-14 justify-center items-center border-y-2 border-black bg-gray-300">
           <th className="flex w-[5%] justify-center">No</th>
           <th className="flex w-[10%] justify-center">카테고리</th>
@@ -48,7 +48,9 @@ const Qna = () => {
             <tr className="flex h-12 w-full justify-center items-center border-b-[1px] border-gray-500">
               <td className="flex w-[5%] justify-center">{value}</td>
               <td className="flex w-[10%] justify-center">null</td>
-              <td className="flex w-[55%] justify-center">제목 {value}</td>
+              <td className="flex w-[55%] justify-center cursor-pointer" onClick={() => navigate("/qna/" + value)}>
+                제목 {value}
+              </td>
               <td className="flex w-[10%] justify-center">글쓴이 {value}</td>
               <td className="flex w-[10%] justify-center">{moment(Date.now()).format("YYYY.MM.DD")}</td>
               <td className="flex w-[5%] justify-center">{value}</td>

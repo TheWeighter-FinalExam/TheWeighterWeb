@@ -37,7 +37,9 @@ const Login = () => {
             <label className="text-button cursor-pointer" onClick={() => navigate("/register")}>
               Create account
             </label>
-            <label className="text-gray-400 cursor-pointer">Forgot your password?</label>
+            <label className="text-gray-400 cursor-pointer" onClick={() => navigate("/password")}>
+              Forgot your password?
+            </label>
           </div>
         </div>
       </div>

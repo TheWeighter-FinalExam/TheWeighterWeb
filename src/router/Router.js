@@ -9,6 +9,7 @@ import Qna from "../components/screen/qna/Qna";
 import Register from "../components/screen/main/Register";
 import Detail from "../components/screen/qna/Detail";
 import Create from "../components/screen/qna/Create";
+import Password from "../components/screen/main/Password";
 
 const Router = () => {
   return (
@@ -24,6 +25,7 @@ const Router = () => {
       <Route path="/info" element={<Info />} />
       <Route path="/barcode" element={<Barcode />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/password" element={<Password />} />
     </Routes>
   );
 };
