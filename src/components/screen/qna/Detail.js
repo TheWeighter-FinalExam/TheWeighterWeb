@@ -44,7 +44,12 @@ const Detail = () => {
           </div>
         </div>
         <div className="flex w-full h-14 border-b-2 justify-between border-black items-center">
-          <button className="flex w-32 h-10 bg-gray-400 float-left ml-5 rounded-full text-white justify-center items-center" onClick={() => navigate('../main')}>글 목록</button>
+          <button
+            className="flex w-32 h-10 bg-gray-400 float-left ml-5 rounded-full text-white justify-center items-center"
+            onClick={() => navigate("../main")}
+          >
+            글 목록
+          </button>
           <div className="flex h-full justify-center items-center">
             <button className="flex w-20 h-10 bg-button rounded-full justify-center items-center text-white mr-2">수정</button>
             <button className="flex w-20 h-10 bg-red-600 rounded-full justify-center items-center text-white mr-5">삭제</button>
